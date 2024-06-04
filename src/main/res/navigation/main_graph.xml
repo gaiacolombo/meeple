@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/LauncherActivity">
+
+    <activity
+        android:id="@+id/LauncherActivity"
+        android:name="it.unimib.lapecorafaquack.ui.launchScreen.LaunchScreenActivity"
+        android:label="activity_launcher"
+        tools:layout="@layout/activity_launch_screen" />
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="it.unimib.lapecorafaquack.ui.main.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <action
+        android:id="@+id/action_launcher_main"
+        app:destination="@id/mainActivity" />
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="it.unimib.lapecorafaquack.ui.login.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
+    <action
+        android:id="@+id/action_main_login"
+        app:destination="@id/loginActivity" />
+</navigation>

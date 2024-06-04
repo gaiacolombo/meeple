@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.gameDetail.GameDetailFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/game_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/immagine_gioco"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/button_addPlayedGames" />
+
+            <TextView
+                android:id="@+id/game_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/nome"
+                android:textSize="20sp"
+                android:textColor="?colorPrimaryVariant"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/game_image" />
+
+            <ImageView
+                android:id="@+id/game_icon_number_players"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="2dp"
+                app:layout_constraintEnd_toStartOf="@id/game_number_players"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/game_title"
+                app:srcCompat="@drawable/ic_baseline_person_24" />
+
+            <TextView
+                android:id="@+id/game_number_players"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="2-4 giocatori"
+                app:layout_constraintStart_toEndOf="@id/game_icon_number_players"
+                app:layout_constraintEnd_toStartOf="@id/game_icon_play_time"
+                app:layout_constraintTop_toBottomOf="@id/game_title" />
+
+            <ImageView
+                android:id="@+id/game_icon_play_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="2dp"
+                app:layout_constraintEnd_toStartOf="@id/game_play_time"
+                app:layout_constraintStart_toEndOf="@id/game_number_players"
+                app:layout_constraintTop_toBottomOf="@id/game_title"
+                app:srcCompat="@drawable/ic_baseline_timer_24" />
+
+            <TextView
+                android:id="@+id/game_play_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="15-30 min"
+                app:layout_constraintStart_toEndOf="@id/game_icon_play_time"
+                app:layout_constraintEnd_toStartOf="@id/game_icon_min_age"
+                app:layout_constraintTop_toBottomOf="@id/game_title" />
+
+            <ImageView
+                android:id="@+id/game_icon_min_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="2dp"
+                app:layout_constraintEnd_toStartOf="@id/game_min_age"
+                app:layout_constraintStart_toEndOf="@id/game_play_time"
+                app:layout_constraintTop_toBottomOf="@id/game_title"
+                app:srcCompat="@drawable/ic_baseline_child_care_24" />
+
+            <TextView
+                android:id="@+id/game_min_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:text="12 anni"
+                app:layout_constraintStart_toEndOf="@id/game_icon_min_age"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/game_title" />
+
+            <TextView
+                android:id="@+id/game_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/descrizione"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/chipGroup" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/game_number_players"></com.google.android.material.chip.ChipGroup>
+
+            <Button
+                android:id="@+id/button_addToPlayGames"
+                android:textSize="13sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/da_giocare"
+                app:layout_constraintBottom_toTopOf="@+id/game_image"
+                app:layout_constraintEnd_toStartOf="@+id/button_addPlayedGames"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/button_addPlayedGames"
+                android:textSize="13sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/ic_baseline_add_24"
+                android:text="@string/giocato"
+                app:layout_constraintBottom_toTopOf="@+id/game_image"
+                app:layout_constraintEnd_toStartOf="@id/button_addFavouriteGames"
+                app:layout_constraintStart_toEndOf="@+id/button_addToPlayGames"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/button_addFavouriteGames"
+                android:textSize="13sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/ic_baseline_add_24"
+                android:text="@string/preferito"
+                app:layout_constraintBottom_toTopOf="@+id/game_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/button_addPlayedGames"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</FrameLayout>

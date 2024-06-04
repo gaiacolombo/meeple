@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_navigation"
+    app:startDestination="@id/explore">
+
+    <fragment
+        android:id="@+id/profile"
+        android:name="it.unimib.lapecorafaquack.ui.profilo.ProfiloFragment"
+        android:label="@string/profilo"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_settings"
+            app:destination="@id/settings" />
+        <action
+            android:id="@+id/action_explore_to_gameDetailsFragment"
+            app:destination="@id/gameDetailsFragment" />
+        <argument
+            android:name="i"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/settings"
+        android:name="it.unimib.lapecorafaquack.ui.settings.SettingsFragment"
+        android:label="@string/impostazioni"
+        tools:layout="@layout/fragment_settings" >
+        <argument
+            android:name="something"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/explore"
+        android:name="it.unimib.lapecorafaquack.ui.home.HomeFragment"
+        android:label="@string/home"
+        tools:layout="@layout/fragment_explore" >
+        <action
+            android:id="@+id/action_explore_to_gameDetailsFragment"
+            app:destination="@id/gameDetailsFragment" />
+        <action
+            android:id="@+id/action_search"
+            app:destination="@id/searchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/friends"
+        android:name="it.unimib.lapecorafaquack.ui.friends.FriendsFragment"
+        android:label="@string/amici"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_friends_search"
+            app:destination="@id/friendsSearchFragment" />
+        <action
+            android:id="@+id/action_friends_to_friendDetailsFragment"
+            app:destination="@id/friendDetailsFragment" />
+        <action
+            android:id="@+id/action_friends_to_profile"
+            app:destination="@id/profile" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameDetailsFragment"
+        android:name="it.unimib.lapecorafaquack.ui.gameDetail.GameDetailFragment"
+        android:label="@string/dettagli_gioco"
+        tools:layout="@layout/fragment_game_details" >
+        <argument
+            android:name="game"
+            app:argType="it.unimib.lapecorafaquack.model.Game" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="it.unimib.lapecorafaquack.ui.search.SearchFragment"
+        android:label="@string/cerca"
+        tools:layout="@layout/fragment_search" >
+        <argument
+            android:name="query"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_search_game_details"
+            app:destination="@id/gameDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/friendsSearchFragment"
+        android:name="it.unimib.lapecorafaquack.ui.friendsSearch.FriendsSearchFragment"
+        android:label="@string/cerca_amici">
+        <argument
+            android:name="query"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_friendsSearchFragment_to_friendDetailsFragment"
+            app:destination="@id/friendDetailsFragment" />
+        <action
+            android:id="@+id/action_friendsSearchFragment_to_profile"
+            app:destination="@id/profile" />
+    </fragment>
+    <fragment
+        android:id="@+id/friendDetailsFragment"
+        android:name="it.unimib.lapecorafaquack.ui.friendDetail.FriendDetailsFragment"
+        android:label="@string/profilo_utente">
+        <argument
+            android:name="user"
+            app:argType="it.unimib.lapecorafaquack.model.User" />
+        <action
+            android:id="@+id/action_friendDetailsFragment_to_gameDetailsFragment"
+            app:destination="@id/gameDetailsFragment" />
+    </fragment>
+
+</navigation>
